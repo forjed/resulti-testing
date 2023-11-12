@@ -20,10 +20,10 @@
         //change fakeresults to actual google api variable
         const apiurl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB7m1QdHeSfp4YkGJ07oIyXDXUu5dQckGM&cx=f63db20a997024c54&q=" + searchQuery;
         console.log("Url:", apiurl);
+        let realresults = [];
         fetch(apiurl)
           .then(response => response.json())
           .then(data => {
-            const realresults = [];
             for (const key in data) {
               if (data.hasOwnProperty(key)) {
                 if (data[key].hasOwnProperty('title')) {

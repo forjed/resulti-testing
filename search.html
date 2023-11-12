@@ -14,7 +14,8 @@
     <div id="results"></div>
     <script>
       function fetchGoogleResults() {
-        const searchQuery = document.getElementById('searchInput').value;
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q');
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = '';
         //change fakeresults to actual google api variable

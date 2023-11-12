@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+  </head> 
+  <body> 
+    <input type="text" id="searchInput" placeholder="Search on Google">
+    <button onclick="fetchGoogleResults()">Search</button> 
+    <div id="results"></div>
+    <script>
+      function fetchGoogleResults() { 
+        const searchQuery = document.getElementById('searchInput').value; 
+        //fake results but google api code goes here
+        const fakeResults = [ 'Result 1', 'Result 2', 'Result 3' ]; 
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; 
+        //change fakeresults to actual google api variable
+        fakeResults.forEach(result => {
+          const resultElement = document.createElement('p'); 
+          resultElement.textContent = result;
+          resultsDiv.appendChild(resultElement);
+        }); 
+      } 
+    </script>
+  </body> 
+</html> 
+

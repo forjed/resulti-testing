@@ -156,14 +156,12 @@ input[type="submit"] {
               txtlinkElement.href = result.link;
               txtlinkElement.target = "_blank";
               txtlinkElement.style.display = "block";
-	      snipElement.style.color = "blue";
               resultsDiv.appendChild(txtlinkElement);
 
               const snipElement = document.createElement('h5');
               snipElement.textContent = result.snippet;
               snipElement.target = "_blank";
               snipElement.style.display = "block";
-	      txtlinkElement.style.color = "green";
               resultsDiv.appendChild(snipElement);
 
               const brElement = document.createElement('br');

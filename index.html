@@ -19,13 +19,20 @@
         resultsDiv.innerHTML = ''; 
         //change fakeresults to actual google api variable
         const apiurl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB7m1QdHeSfp4YkGJ07oIyXDXUu5dQckGM&cx=f63db20a997024c54&q=" + searchQuery;
+        const apiurl = 'your_api_endpoint_here';
         fetch(apiurl)
           .then(response => response.json())
           .then(data => {
-          const realresults = data.map(item => item.title);
+            const realresults = [];
+            for (const key in data) {
+              if (data.hasOwnProperty(key)) {
+                if (data[key].hasOwnProperty('title')) {
+                  realresults.push(data[key].title);
+                }
+              }
+            }
         })
         .catch(error => console.error('Error fetching data:', error));
-        
         realresults.forEach(result => {
           const resultElement = document.createElement('p'); 
           resultElement.textContent = result;

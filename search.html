@@ -143,15 +143,6 @@ input[type="submit"] {
               }
             }
             realresults.forEach(result => {
-        realresults.forEach(result => {
-  // Créer et ajouter l'élément <img> pour le favicon
-  if (result.pagemap && result.pagemap.cse_thumbnail && result.pagemap.cse_thumbnail.length > 0) {
-    const faviconElement = document.createElement('img');
-    faviconElement.src = result.pagemap.cse_thumbnail[0].src;
-    faviconElement.alt = "Favicon";
-    resultsDiv.appendChild(faviconElement);
-  }
-
               const linkElement = document.createElement('a');
               linkElement.textContent = result.title;
               linkElement.href = result.link;

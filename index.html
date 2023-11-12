@@ -46,6 +46,12 @@
               linkElement.style.display = "block";
               resultsDiv.appendChild(linkElement);
 
+              const snipElement = document.createElement('a');
+              linkElement.textContent = result.snippet;
+              linkElement.target = "_blank";
+              linkElement.style.display = "block";
+              resultsDiv.appendChild(snipElement);
+
               const brElement = document.createElement('br');
               resultsDiv.appendChild(brElement);
             });

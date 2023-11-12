@@ -17,6 +17,7 @@
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = ''; 
         //change fakeresults to actual google api variable
+        const apiurl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB7m1QdHeSfp4YkGJ07oIyXDXUu5dQckGM&cx=f63db20a997024c54&q=" + searchQuery;
         fakeResults.forEach(result => {
           const resultElement = document.createElement('p'); 
           resultElement.textContent = result;

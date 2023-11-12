@@ -32,12 +32,6 @@
               }
             }
             realresults.forEach(result => {
-              const resultElement = document.createElement('title');
-              resultElement.textContent = result.title;
-              resultElement.href = result.link;
-              resultElement.target = "_blank";
-              resultElement.style.display = "block";
-              resultsDiv.appendChild(resultElement);
 
               const linkElement = document.createElement('a');
               linkElement.textContent = result.title;
@@ -45,6 +39,13 @@
               linkElement.target = "_blank";
               linkElement.style.display = "block";
               resultsDiv.appendChild(linkElement);
+
+              const txtlinkElement = document.createElement('a');
+              txtlinkElement.textContent = result.link;
+              txtlinkElement.href = result.link;
+              txtlinkElement.target = "_blank";
+              txtlinkElement.style.display = "block";
+              resultsDiv.appendChild(txtlinkElement);
 
               const snipElement = document.createElement('p');
               snipElement.textContent = result.snippet;

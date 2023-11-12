@@ -19,7 +19,7 @@
         resultsDiv.innerHTML = ''; 
         //change fakeresults to actual google api variable
         const apiurl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB7m1QdHeSfp4YkGJ07oIyXDXUu5dQckGM&cx=f63db20a997024c54&q=" + searchQuery;
-        const apiurl = 'your_api_endpoint_here';
+        console.log("Url:", apiurl);
         fetch(apiurl)
           .then(response => response.json())
           .then(data => {

@@ -9,12 +9,13 @@
   </head>
   <body>
     <img src="image svg here" width="" height="">
-    <input type="text" id="searchInput" placeholder="Search on Resulti">
-    <button onclick="fetchGoogleResults()">Search</button>
+              <form action="https://forjed.github.io/resulti-testing/search.html">
+                <input type="search" name="q" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light" id="search-bar">
+              </form>
     <div id="results"></div>
     <script>
-      function fetchGoogleResults() {
-        const searchQuery = document.getElementById('searchInput').value;
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q');
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = '';
         //change fakeresults to actual google api variable
@@ -40,14 +41,14 @@
               linkElement.style.display = "block";
               resultsDiv.appendChild(linkElement);
 
-              const txtlinkElement = document.createElement('p');
+              const txtlinkElement = document.createElement('h6');
               txtlinkElement.textContent = result.link;
               txtlinkElement.href = result.link;
               txtlinkElement.target = "_blank";
               txtlinkElement.style.display = "block";
               resultsDiv.appendChild(txtlinkElement);
 
-              const snipElement = document.createElement('p');
+              const snipElement = document.createElement('h3');
               snipElement.textContent = result.snippet;
               snipElement.target = "_blank";
               snipElement.style.display = "block";
@@ -58,7 +59,6 @@
             });
           })
           .catch(error => console.error('Error fetching data:', error));
-      }
     </script>
   </body>
 </html> 

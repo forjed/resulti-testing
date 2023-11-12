@@ -45,6 +45,9 @@
               linkElement.target = "_blank";
               linkElement.style.display = "block";
               resultsDiv.appendChild(linkElement);
+
+              const brElement = document.createElement('br');
+              resultsDiv.appendChild(brElement);
             });
           })
           .catch(error => console.error('Error fetching data:', error));
